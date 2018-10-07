@@ -13,7 +13,7 @@ struct APIConstant {
     
     static let loadedFontNumber: Int = 150
     #if DEBUG
-    static let APIKey = ""
+    static let APIKey = "AIzaSyD4_9QlEkZxl3q-gchxUfo3yMxrbwe6KkQ"
     static let BaseURL = "https://www.googleapis.com/webfonts/v1/webfonts"
     #else
     static let APIKey = "Release API Key"

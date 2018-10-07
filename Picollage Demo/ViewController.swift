@@ -126,6 +126,15 @@ class ViewController: UIViewController {
         collectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(clearTempContents),
+                                               name: UIApplication.willTerminateNotification,
+                                               object: nil)
+    }
+    
+    @objc func clearTempContents() {
+        dataStore.clearTempFiles()
     }
     
     func showContents() {

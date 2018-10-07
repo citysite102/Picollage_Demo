@@ -100,7 +100,20 @@ class FontDataStore: NSObject, UICollectionViewDataSource {
         }
     }
     
-    func loadFont(_ fontData: Data) -> UIFont? {
+    func clearTempFiles() {
+        let tempPath = NSTemporaryDirectory()
+        if let tempContents = try? FileManager.default.contentsOfDirectory(atPath: tempPath) {
+            for path in tempContents {
+                do {
+                    try FileManager.default.removeItem(atPath: path)
+                } catch {
+                    
+                }
+            }
+        }
+    }
+    
+    private func loadFont(_ fontData: Data) -> UIFont? {
         var error: Unmanaged<CFError>?
         if let provider = CGDataProvider(data: fontData as CFData) {
             if let font = CGFont(provider) {

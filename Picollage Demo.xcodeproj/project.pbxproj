@@ -65,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				7E62B04821690C6A004C9D65 /* ViewController.swift */,
+				7E62B05821691174004C9D65 /* Constant.swift */,
+				7E62B065216A61E4004C9D65 /* Storage */,
 				7E62B062216928A6004C9D65 /* Views */,
 				7E62B0612169289B004C9D65 /* Manager */,
 				7E62B06021692891004C9D65 /* Model */,
@@ -80,9 +82,7 @@
 		7E62B06021692891004C9D65 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7E62B05E216912C9004C9D65 /* FontDataStore.swift */,
 				7E62B05C216912B0004C9D65 /* FontModel.swift */,
-				7E62B05821691174004C9D65 /* Constant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,6 +101,14 @@
 				7E62B063216928CE004C9D65 /* FontDisplayCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7E62B065216A61E4004C9D65 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				7E62B05E216912C9004C9D65 /* FontDataStore.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
