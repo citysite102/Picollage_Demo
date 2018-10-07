@@ -12,15 +12,35 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     var activityIndicator: UIActivityIndicatorView!
-    var demoTextContainer: UIView!
-    var demoTextField: UITextField!
     var collectionView: UICollectionView!
+    
+    private lazy var demoTextContainer: UIView = {
+        let container = UIView()
+        container.layer.shadowColor = UIColor.black.cgColor
+        container.layer.shadowOffset = CGSize(width: 0, height: 5)
+        container.layer.shadowRadius = 6
+        container.layer.shadowOpacity = 0.1
+        container.backgroundColor = UIColor.clear
+        container.translatesAutoresizingMaskIntoConstraints = false
+        return container
+    }()
+    
+    private lazy var demoTextField: UITextField = {
+        let textField = UITextField()
+        textField.textAlignment = .center
+        textField.delegate = self
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.text = "Input Demo Content"
+        textField.isHidden = true
+        textField.alpha = 0
+        textField.backgroundColor = UIColor.white
+        textField.layer.cornerRadius = 4.0
+        return textField
+    }()
     
     var dataStore: FontDataStore = FontDataStore()
     var manager: ServiceManager = ServiceManager(urlSession: URLSession.shared)
-    
     var fetchTimer: Timer!
-    
     var currentSelectedFontModel: FontModel? {
         didSet {
             DispatchQueue.main.async {
@@ -69,13 +89,6 @@ class ViewController: UIViewController {
         searchBar.delegate = self
         searchBar.isUserInteractionEnabled = false
         
-        demoTextContainer = UIView()
-        demoTextContainer.layer.shadowColor = UIColor.black.cgColor
-        demoTextContainer.layer.shadowOffset = CGSize(width: 0, height: 5)
-        demoTextContainer.layer.shadowRadius = 6
-        demoTextContainer.layer.shadowOpacity = 0.1
-        demoTextContainer.backgroundColor = UIColor.clear
-        demoTextContainer.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(demoTextContainer)
         NSLayoutConstraint.activate([
             demoTextContainer.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 32),
@@ -85,16 +98,6 @@ class ViewController: UIViewController {
             demoTextContainer.heightAnchor.constraint(equalToConstant: 48)
             ])
         
-        demoTextField = UITextField()
-        demoTextField.textAlignment = .center
-        demoTextField.delegate = self
-        demoTextField.translatesAutoresizingMaskIntoConstraints = false
-        demoTextField.text = "Input Demo Content"
-        demoTextField.isHidden = true
-        demoTextField.alpha = 0
-        demoTextField.backgroundColor = UIColor.white
-        demoTextField.layer.cornerRadius = 4.0
-
         demoTextContainer.addSubview(demoTextField)
         NSLayoutConstraint.activate([
             demoTextField.topAnchor.constraint(equalTo: demoTextContainer.topAnchor),

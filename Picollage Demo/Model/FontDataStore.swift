@@ -125,4 +125,13 @@ class FontDataStore: NSObject, UICollectionViewDataSource {
         }
         return nil
     }
+    
+    func releaseFont(_ fontData: Data) {
+        var error: Unmanaged<CFError>?
+        if let provider = CGDataProvider(data: fontData as CFData) {
+            if let font = CGFont(provider) {
+                CTFontManagerUnregisterGraphicsFont(font, &error)
+            }
+        }
+    }
 }

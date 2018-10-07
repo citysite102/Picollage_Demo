@@ -11,7 +11,7 @@ import WebKit
 import CoreText
 
 class FontDisplayCell: UICollectionViewCell {
- 
+    
     var fontDisplayLabel: UILabel!
     var dataModel: FontModel!
     

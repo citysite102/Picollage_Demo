@@ -64,6 +64,7 @@
 		7E62B04521690C6A004C9D65 /* Picollage Demo */ = {
 			isa = PBXGroup;
 			children = (
+				7E62B04821690C6A004C9D65 /* ViewController.swift */,
 				7E62B062216928A6004C9D65 /* Views */,
 				7E62B0612169289B004C9D65 /* Manager */,
 				7E62B06021692891004C9D65 /* Model */,
@@ -72,7 +73,6 @@
 				7E62B04D21690C6C004C9D65 /* Assets.xcassets */,
 				7E62B04F21690C6C004C9D65 /* LaunchScreen.storyboard */,
 				7E62B05221690C6C004C9D65 /* Info.plist */,
-				7E62B04821690C6A004C9D65 /* ViewController.swift */,
 			);
 			path = "Picollage Demo";
 			sourceTree = "<group>";

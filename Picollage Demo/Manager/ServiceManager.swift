@@ -18,7 +18,10 @@ class ServiceManager: NSObject {
     }
     
     func fetchFontInformation(_ completion: @escaping (Bool, [FontModel]?) -> (Void)) {
-        
+        guard APIConstant.APIKey != "" else {
+            print("Google Font API Key Is Not Set")
+            return
+        }
         if let url = URL(string: APIConstant.BaseURL + "?key=" + APIConstant.APIKey) {
             let fetchRequest = URLRequest(url: url)
             let task = urlSession.dataTask(with: fetchRequest) { (data, response, error) in

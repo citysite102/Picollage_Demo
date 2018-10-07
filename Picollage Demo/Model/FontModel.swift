@@ -33,6 +33,7 @@ struct FontModel: Codable {
         case files
     }
     
+    //TODO: Use Snapshot Cached Image To Release Font Memory?
     var customFont: UIFont?
     var customColor: UIColor!
 }
