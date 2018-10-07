@@ -12,6 +12,11 @@
 		7E62B04C21690C6A004C9D65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E62B04A21690C6A004C9D65 /* Main.storyboard */; };
 		7E62B04E21690C6C004C9D65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E62B04D21690C6C004C9D65 /* Assets.xcassets */; };
 		7E62B05121690C6C004C9D65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E62B04F21690C6C004C9D65 /* LaunchScreen.storyboard */; };
+		7E62B05921691174004C9D65 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E62B05821691174004C9D65 /* Constant.swift */; };
+		7E62B05B2169127D004C9D65 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E62B05A2169127D004C9D65 /* ServiceManager.swift */; };
+		7E62B05D216912B0004C9D65 /* FontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E62B05C216912B0004C9D65 /* FontModel.swift */; };
+		7E62B05F216912C9004C9D65 /* FontDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E62B05E216912C9004C9D65 /* FontDataStore.swift */; };
+		7E62B064216928CE004C9D65 /* FontDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E62B063216928CE004C9D65 /* FontDisplayCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		7E62B04D21690C6C004C9D65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E62B05021690C6C004C9D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E62B05221690C6C004C9D65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E62B05821691174004C9D65 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		7E62B05A2169127D004C9D65 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		7E62B05C216912B0004C9D65 /* FontModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontModel.swift; sourceTree = "<group>"; };
+		7E62B05E216912C9004C9D65 /* FontDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontDataStore.swift; sourceTree = "<group>"; };
+		7E62B063216928CE004C9D65 /* FontDisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontDisplayCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,43 @@
 		7E62B04521690C6A004C9D65 /* Picollage Demo */ = {
 			isa = PBXGroup;
 			children = (
+				7E62B062216928A6004C9D65 /* Views */,
+				7E62B0612169289B004C9D65 /* Manager */,
+				7E62B06021692891004C9D65 /* Model */,
 				7E62B04621690C6A004C9D65 /* AppDelegate.swift */,
-				7E62B04821690C6A004C9D65 /* ViewController.swift */,
 				7E62B04A21690C6A004C9D65 /* Main.storyboard */,
 				7E62B04D21690C6C004C9D65 /* Assets.xcassets */,
 				7E62B04F21690C6C004C9D65 /* LaunchScreen.storyboard */,
 				7E62B05221690C6C004C9D65 /* Info.plist */,
+				7E62B04821690C6A004C9D65 /* ViewController.swift */,
 			);
 			path = "Picollage Demo";
+			sourceTree = "<group>";
+		};
+		7E62B06021692891004C9D65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7E62B05E216912C9004C9D65 /* FontDataStore.swift */,
+				7E62B05C216912B0004C9D65 /* FontModel.swift */,
+				7E62B05821691174004C9D65 /* Constant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7E62B0612169289B004C9D65 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7E62B05A2169127D004C9D65 /* ServiceManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		7E62B062216928A6004C9D65 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7E62B063216928CE004C9D65 /* FontDisplayCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E62B05F216912C9004C9D65 /* FontDataStore.swift in Sources */,
+				7E62B05D216912B0004C9D65 /* FontModel.swift in Sources */,
 				7E62B04921690C6A004C9D65 /* ViewController.swift in Sources */,
 				7E62B04721690C6A004C9D65 /* AppDelegate.swift in Sources */,
+				7E62B064216928CE004C9D65 /* FontDisplayCell.swift in Sources */,
+				7E62B05921691174004C9D65 /* Constant.swift in Sources */,
+				7E62B05B2169127D004C9D65 /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
